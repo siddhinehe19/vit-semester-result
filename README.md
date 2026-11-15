@@ -1,16 +1,77 @@
-# React + Vite
+# VIT Semester Result
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React app for entering a student's semester marks and generating an instant scorecard. Add the student's details and marks for four subjects to see totals, percentage, grades, and a pass or review status.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Enter student details and marks
 
-## React Compiler
+![VIT Semester Result form with student details and subject marks](screenshot/Dashboard.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Generated scorecard
 
-## Expanding the Oxlint configuration
+![Calculated scorecard showing total marks, percentage, overall grade, and subject results](screenshot/result.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Features
+
+- Enter student name, registration number, and programme.
+- Enter MSE and ESE marks for Data Structures, Object Oriented Programming, Discrete Mathematics, and Engineering Physics.
+- Load sample student details and marks, or clear the form to start over.
+- View a scorecard with per-subject totals and grades.
+- Validate required details and mark ranges before calculating.
+
+## Grading
+
+Each subject is scored out of 100: MSE is out of 30 and ESE is out of 70. The overall percentage is the total across all four subjects divided by four. A student passes when every subject total is at least 40.
+
+| Mark | Grade |
+| ---: | :--- |
+| 90–100 | S |
+| 80–89 | A |
+| 70–79 | B |
+| 60–69 | C |
+| 50–59 | D |
+| 40–49 | E |
+| 0–39 | F |
+
+## Getting started
+
+### Requirements
+
+- Node.js
+- npm
+
+### Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite in your browser.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run build` | Create a production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run Oxlint. |
+
+## Project structure
+
+```text
+src/
+  App.jsx       Main form, validation, calculations, and scorecard
+  App.css       App and scorecard styles
+  index.css     Global styles
+  main.jsx      React entry point
+public/         Static public assets
+```
+
+## Built with
+
+- React
+- Vite
+- Oxlint
